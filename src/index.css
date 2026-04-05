@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+@theme {
+  /* Colors - The Candy Shop Palette */
+  --color-clay-canvas: #F4F1FA;
+  --color-clay-foreground: #332F3A;
+  --color-clay-muted: #635F69;
+  --color-clay-accent: #7C3AED;
+  --color-clay-accent-alt: #DB2777;
+  --color-clay-info: #0EA5E9;
+  --color-clay-success: #10B981;
+  --color-clay-warning: #F59E0B;
+
+  /* Typography */
+  --font-nunito: "Nunito", sans-serif;
+  --font-dmsans: "DM Sans", sans-serif;
+
+  /* Shadows - The Engine of Clay */
+  --shadow-clay-card: 16px 16px 32px rgba(160, 150, 180, 0.2), 
+                     -10px -10px 24px rgba(255, 255, 255, 0.9), 
+                     inset 6px 6px 12px rgba(139, 92, 246, 0.03), 
+                     inset -6px -6px 12px rgba(255, 255, 255, 1);
+  
+  --shadow-clay-button: 12px 12px 24px rgba(139, 92, 246, 0.3), 
+                       -8px -8px 16px rgba(255, 255, 255, 0.4), 
+                       inset 4px 4px 8px rgba(255, 255, 255, 0.4), 
+                       inset -4px -4px 8px rgba(0, 0, 0, 0.1);
+
+  --shadow-clay-pressed: inset 10px 10px 20px #d9d4e3, 
+                        inset -10px -10px 20px #ffffff;
+
+  --shadow-clay-surface: 30px 30px 60px #cdc6d9, 
+                        -30px -30px 60px #ffffff, 
+                        inset 10px 10px 20px rgba(139, 92, 246, 0.05), 
+                        inset -10px -10px 20px rgba(255, 255, 255, 0.8);
+
+  /* Animations */
+  @keyframes clay-float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(2deg); }
+  }
+  @keyframes clay-breathe {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-clay-canvas text-clay-foreground font-dmsans antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-nunito font-black tracking-tight;
+  }
+}
+
+.clay-text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-br from-clay-foreground via-clay-accent to-clay-accent-alt;
+}
+
+.animate-clay-float {
+  animation: clay-float 8s ease-in-out infinite;
+}
+
+.animate-clay-breathe {
+  animation: clay-breathe 6s ease-in-out infinite;
+}
+

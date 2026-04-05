@@ -1,0 +1,5 @@
+{
+  "name": "FinanceFlow Backend",
+  "description": "A robust finance data processing backend with role-based access control, transaction management, and dashboard analytics.",
+  "requestFramePermissions": []
+}
